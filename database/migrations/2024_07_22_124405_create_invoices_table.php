@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('status'); // billed, paid, void
             $table->dateTime('billed_date');
             $table->dateTime('paid_date')->nullable();
+
+            $table->foreign('customer_id')->references('id')->on('customer_id');
         });
     }
 
